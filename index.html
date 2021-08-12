@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Hangman Game</title>
+	<!-- <link rel="stylesheet" type="text/css" href="reset.css"> -->
+	<link rel="stylesheet" type="text/css" href="https://necolas.github.io/normalize.css/6.0.0/normalize.css">
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<link href="https://fonts.googleapis.com/css?family=Monoton" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
+</head>
+<body>
+	<header>
+		<h1 id="title">Hangman Game</h1>
+	</header>
+
+	<section class="mainSection">
+		
+		<!-- Start up screen -->
+		<div class="startUp">
+			<h2 id="welcomeHeader">Welcome to the Classic Game Hangman</h2>
+			<p id="welcomeText">The goal is to guess the title of the classic game. All console games from NES | SNES | SEGA Genesis are fair play!</p>
+			<p id="startText" class="blink_me">1P Press Start</p>
+			<button id="startButton" type="button" onclick="initialize();">START</button>
+		</div>
+		
+		<!-- Win Screen -->
+		<div class="win textBackground invisible">
+			<h2 id="winHeader"> <span id="winWord"> </span> is correct!</h2>
+			<p id="winText">You've won the battle, but can you win the war? Try to guess all of the words! Are you a retro game master?</p>
+			<button id="playAgain" type="button" onclick="initialize();"><span class="blink_me">PLAY AGAIN</span></button>
+		</div>
+
+		<!-- Lose Screen -->
+		<div class="lose textBackground invisible">
+			<h2 id="loseHeader">YOU LOST!</h2>
+			<p id="loseText">Some people are winners but you are not one of them. I'm sure you're good at other things.</p>
+			<button id="tryAgain" type="button" onclick="initialize();"><span class = "blink_me">GLUTTON FOR PUNISHMENT</span></button>
+		</div>
+		
+		<!-- Game Board -->
+		<div class="flexBodyGame invisible">
+			<div id="leftSide" class="flexLeft">
+				<div id="directions" class="textBackground">
+					<h2 id="directionHeading">Game Directions: </h2>
+					<p id="directionText">Press a key to guess a letter.</p>
+				</div>
+				<div id="hp" class="textBackground">
+					<h2 id="hpHeading">HP Bar: </h2>
+					<progress id="hpBar" value="100" max="100"></progress>
+				</div>
+				<div id="hint" class="textBackground">
+					<h2 id="hintHeading">Hint: </h2>
+					<p id="hintText">The golden age of gaming. Guess the name of the game! The background is the key.</p>
+				</div>
+			</div>
+			<div id="rightSide" class="flexRight">
+				<div class="textBackground" id="wordToGuess">
+					<span id="wordToGuessBoard"></span>
+				</div>
+				<div id="incorrectGuess" class="textBackground">
+					<h2 id="incorrectGuessHeading">Incorrect Guesses:</h2> 
+					<p id="incorrectGuessArray">
+						<span id="incorrectLetter"></span>
+					</p>
+				</div>
+				<div class="textBackground" id="Reset">
+					<button id="resetButton" type="button" onclick="initialize();">RESET</button>
+				</div>
+			</div>
+		</div>
+
+	</section>
+
+	<footer>
+		<div id="copyright">
+			&#169; Copyright 2020 Sai Charan Reddy
+		</div>
+	</footer>
+	
+	<script type="text/javascript" src="hangman.js"></script>
+</body>
+</html>
