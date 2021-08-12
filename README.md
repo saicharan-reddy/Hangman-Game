@@ -18,5 +18,5 @@ Google fonts
 
 ## Play Now:
 
-https://fbrahman.github.io/Hangman-Game/
+https://hangman-game-mocha.vercel.app/
 
